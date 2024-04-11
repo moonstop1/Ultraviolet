@@ -14,7 +14,7 @@ await mkdir('dist');
 // don't compile these files
 await copyFile('src/sw.js', 'dist/sw.js');
 await copyFile('src/uv.config.js', 'dist/uv.config.js');
-
+build 
 await build({
     platform: 'browser',
     sourcemap: true,
@@ -28,7 +28,11 @@ await build({
     define: {
         'process.env.ULTRAVIOLET_VERSION': JSON.stringify(
             process.env.ULTRAVIOLET_VERSION
-        ),
+        ),{
+  "scripts": {
+    "build": "[my-framework] build --output public"
+  }
+}
     },
     bundle: true,
     logLevel: 'info',
